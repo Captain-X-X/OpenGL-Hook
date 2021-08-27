@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-#include "Memory.h"
+#include "Memory.h" // https://github.com/Captain-X-X/MemoryCPP
 
 
 struct GL_Hook
