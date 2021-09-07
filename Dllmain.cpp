@@ -1,4 +1,6 @@
-#include "includes.h"
+#include <windows.h>
+#include <iostream>
+#include "Hook.h"
 typedef BOOL(__stdcall* twglSwapBuffers) (HDC hDc);
 twglSwapBuffers owglSwapBuffers;
 twglSwapBuffers wglSwapBuffersGateway;
