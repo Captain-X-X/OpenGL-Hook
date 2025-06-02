@@ -4,10 +4,8 @@
 typedef BOOL(__stdcall* twglSwapBuffers) (HDC hDc);
 twglSwapBuffers owglSwapBuffers;
 twglSwapBuffers wglSwapBuffersGateway;
-SoulLess::MenuKit menu;
 
 FILE* fp;
-GL::font glfont;
 
 BOOL __stdcall hkglSwapBuffers(HDC hDc)
 {
@@ -23,6 +21,10 @@ BOOL WINAPI HookStart(HMODULE HookModule)
     GL_Hook SwapBuffersHook((BYTE*)GetProcAddress(GetModuleHandle("opengl32.dll"), "wglSwapBuffers"), (BYTE*)hkglSwapBuffers, (BYTE*)&wglSwapBuffersGateway, 5);
     SwapBuffersHook.Enable();
     SwapBuffersHook.Status();
+    while(!GetAsyncKeyState(VK_END) & 1)
+    {
+	Sleep(10);
+    }
     return 0;
 }
 
