@@ -9,7 +9,7 @@ FILE* fp;
 
 BOOL __stdcall hkglSwapBuffers(HDC hDc)
 {
-	std::cout << "[*] OpenGL Hooked!" << std::endl;
+    printf("OpenGL Hooked!\n");
 
     return wglSwapBuffersGateway(hDc);
 }
